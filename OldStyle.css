@@ -1,0 +1,202 @@
+#BgImg{
+    background-image: url(MainPage.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    text-align: center;
+}
+
+#buttons-container{
+    width: 700px;
+    height: 650px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+    clip-path: inset(0 0 0 0 round 40px);
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+#buttons-container h1{
+    color: gold;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+
+.button #Calendar{
+    background-image: url(Calendar.jpg);
+}
+
+.button #Prayer{
+    color: rgb(226, 204, 7);
+    background-image: url(PrayerTimes.jpg);
+}
+
+.button #Quran{
+    color: rgb(12, 145, 12);
+    background-image: url(Quran.png);
+}
+
+.overlay{
+    position: relative; 
+    overflow: hidden; 
+
+    background-size: cover;
+    background-position: center;
+    clip-path: inset(0 0 0 0 round 40px);
+}
+
+.overlay::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        transition: background 0.3s ease-in-out;
+}
+
+.overlay:hover::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.button-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-wrap: wrap;
+}
+
+.info{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.822);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
+    height: 200px;
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%);
+
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+/*Draws a background, colors it, formats it, 
+then postitions to the button above by using `postion: absolute;` and `position: relative`, 
+finally aligns it veritcally using flex and the direct to column
+
+opacity: 0; used for the smooth fade in and out,
+visibility: hidden; used to hide the element and make non-interactable,
+transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; sets the transition time for the actions mentioned.*/
+
+.overlay:hover + .info {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+/*When the button is hovered over, the info element right after it (used + for this) is shown.*/
+
+.button a{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-bottom: 10px; 
+    width: 200px;
+    height: 50px;
+
+    text-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+#credits-container{
+    background: rgb(177,172,164);
+    align-items: center;
+    padding: 1px 20px;
+
+}
+
+#credits{
+    display: flex;
+    justify-content: space-between;
+}
+
+#credits h4 {
+    flex: 1;
+}
+
+#credits .left {
+    text-align: left;
+}
+
+#credits .right {
+    text-align: right;
+}
+
+#about-container{
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    height: 500px;
+
+    background-color: rgba(250,250,250,255);
+}
+
+#about-container h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+
+    background-color: blue;
+    border-radius: 15px;
+    width: 400px;
+    height: 50px;
+    margin-top: 25px;
+
+}
+
+#about-content{
+    flex: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 50px;
+}
+
+.about-wrapper{
+    position: relative;
+    background-color: blueviolet;
+    border-radius: 25px;
+    width: 30%;
+    padding: 0px 10px;
+    
+    flex-direction: column;
+}
